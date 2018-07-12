@@ -4,31 +4,32 @@ import { handleActions } from "redux-actions";
 
 import * as actions from "./actions";
 
-const uid = (() => {
-  let id = 5;
-  return () => id++;
-})();
-
-/**
- * POINTS
- */
-
 const points = handleActions(
   {
-    [actions.сreatePoint](state, { payload: name }) {
-      return [...state, { id: uid(), name }];
+    [actions.сreatePoint](state, { payload: point }) {
+      return [...state, point];
     },
     [actions.deletePoint](state, { payload: id }) {
       return state.filter(point => point.id !== id);
     },
-    [actions.reoderPoints](state, { payload }) {
+    [actions.reoderPoints](state, { payload: points }) {
+      return points;
+    }
+  },
+  []
+);
+
+const center = handleActions(
+  {
+    [actions.changeCenter](state, { payload }) {
       return payload;
     }
   },
-  {}
+  [55.76, 37.64]
 );
 
 export default combineReducers({
   form,
-  points
+  points,
+  center
 });

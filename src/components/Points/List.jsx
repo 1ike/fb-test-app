@@ -82,6 +82,7 @@ class List extends React.Component {
                 <Draggable key={point.id} draggableId={point.id} index={index}>
                   {(provided, snapshot) => (
                     <div
+                      id={`point_${point.id}`}
                       className="sortable-list__item"
                       ref={provided.innerRef}
                       {...provided.draggableProps}

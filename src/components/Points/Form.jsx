@@ -3,6 +3,13 @@ import { Field, reduxForm } from "redux-form";
 
 import _connect from "../../redux/connect";
 
+const uid = (() => {
+  let id = 5;
+  return () => id++;
+})();
+
+const mapStateToProps = ({ center }) => ({ center });
+
 class Form extends React.Component {
   inputName = "inputPoint";
 
@@ -12,8 +19,24 @@ class Form extends React.Component {
       this.focusInput();
       return;
     }
-    console.log(this.props);
-    this.props.сreatePoint(name);
+
+    this.props.сreatePoint({
+      id: uid(),
+      name,
+      placemark: {
+        geometry: {
+          coordinates: this.props.center
+        },
+        properties: {
+          hintContent: name,
+          balloonContent: name
+        },
+        options: {
+          preset: "islands#blueCircleDotIconWithCaption",
+          draggable: true
+        }
+      }
+    });
     this.props.reset();
   };
 
@@ -56,4 +79,4 @@ class Form extends React.Component {
 
 const reduxFormWrapper = reduxForm({ form: "createPoint" })(Form);
 
-export default _connect()(reduxFormWrapper);
+export default _connect(mapStateToProps)(reduxFormWrapper);

@@ -1,14 +1,12 @@
-import { createAction } from "redux-actions";
+import { createAction, createActions } from "redux-actions";
 
-/**
- * POINTS
- */
-
-// Create point
 export const сreatePoint = createAction("CREATE_POINT");
 
-// Delete point
-export const deletePoint = createAction("DELETE_POINT");
-
-// Reoder points
-export const reoderPoints = createAction("REODER_POINTS");
+export const { deletePoint, reoderPoints, changeCenter } = createActions(
+  // {
+  //   ACTION_ONE: (key, value) => ({ [key]: value })
+  // },
+  "DELETE_POINT",
+  "REODER_POINTS",
+  "CHANGE_CENTER"
+);
