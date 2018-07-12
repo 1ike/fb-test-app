@@ -1,0 +1,80 @@
+#root {
+  display: flex;
+  height: 100%;
+  align-items: stretch;
+}
+
+#points {
+  flex-basis: 30%;
+  background: orange;
+  display: flex;
+  flex-direction: column;
+}
+
+#map {
+  flex-basis: 70%;
+  background: greenyellow;
+}
+
+$grid: 0.5em;
+
+.new-point-form,
+.sortable-list__item {
+  display: flex;
+  align-items: center;
+  padding: $grid;
+}
+.new-point-form {
+  $size: 2em;
+  justify-content: flex-end;
+
+  &__input {
+    height: $size;
+    flex-grow: 1;
+  }
+
+  &__submit-button {
+    $submitColor: green;
+    height: $size;
+    width: $size;
+    margin: 0em;
+    margin-left: 1em;
+    padding: 0.1em;
+    line-height: 1;
+    border: 1px solid $submitColor;
+    background-color: #fff;
+    cursor: pointer;
+    color: darken($submitColor, 15%);
+  }
+}
+
+.sortable-list {
+  padding: $grid;
+  flex-grow: 1;
+
+  &__item {
+    padding: $grid * 2;
+    margin: 0 0 $grid 0;
+  }
+  &__item-text {
+    user-select: none;
+    flex-grow: 1;
+    word-break: break-all;
+  }
+
+  &__delete-button {
+    $deleteColor: red;
+    $size: 2em;
+    height: $size;
+    width: $size;
+    margin: 0em;
+    margin-left: $grid * 2;
+    padding: 0.1em;
+    line-height: 1;
+    border: 1px solid $deleteColor;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    color: darken($deleteColor, 15%);
+  }
+}
