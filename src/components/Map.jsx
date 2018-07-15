@@ -10,17 +10,21 @@ const height = "100vh";
 const mapStateToProps = state => state;
 
 class MapBasics extends React.Component {
-  shiftCenter = e => this.props.shiftCenter(e.originalEvent.newCenter);
+  shiftCenter = e => {
+    const { newCenter } = e.originalEvent;
+    const { center } = this.props;
+
+    if (newCenter[0] === center[0] && newCenter[1] === center[1]) return;
+
+    this.props.shiftCenter(e.originalEvent.newCenter);
+  };
 
   shiftPoint = id => e => {
-    console.log(e);
     const {
-      originalEvent: {
-        target: {
-          geometry: { _coordinates: coordinates }
-        }
+      target: {
+        geometry: { _coordinates: coordinates }
       }
-    } = e;
+    } = e.originalEvent;
     console.log(coordinates);
     this.props.shiftPoint({ id, coordinates });
   };

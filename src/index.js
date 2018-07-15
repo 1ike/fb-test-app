@@ -1,16 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
-import store from './store';
+import "./index.css";
+import Points from "./components/Points";
+import Map from "./components/Map";
+import store from "./store";
+
+import registerServiceWorker from "./registerServiceWorker";
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <React.Fragment>
+      <Points />
+      <Map />
+    </React.Fragment>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
+
 registerServiceWorker();

@@ -29,14 +29,14 @@ const reorder = (list, startIndex, endIndex) => {
 
 const getItemStyle = (isDragging, draggableStyle) => ({
   // change background colour if dragging
-  background: isDragging ? "lightgreen" : "grey",
+  background: isDragging ? "#fff" : "#eee",
 
   // styles we need to apply on draggables
   ...draggableStyle
 });
 
 const getListStyle = isDraggingOver => ({
-  background: isDraggingOver ? "lightblue" : "lightgrey"
+  background: isDraggingOver ? "#ffc04d" : "orange"
 });
 
 const mapStateToProps = state => {

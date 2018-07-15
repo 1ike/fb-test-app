@@ -1,5 +1,5 @@
 html {
-	height: 100%;
+  height: 100%;
 }
 
 body {
@@ -9,3 +9,89 @@ body {
   font-family: sans-serif;
 }
 
+#root {
+  display: flex;
+  height: 100%;
+  align-items: stretch;
+}
+
+#points {
+  flex-basis: 30%;
+  background: orange;
+  // background: lighten(orange, 15%);
+  display: flex;
+  flex-direction: column;
+}
+
+#map {
+  flex-basis: 70%;
+}
+
+$grid: 0.5em;
+
+.new-point-form,
+.sortable-list__item {
+  display: flex;
+  align-items: center;
+  padding: $grid;
+}
+.new-point-form {
+  $size: 2em;
+  justify-content: flex-end;
+  padding-bottom: $grid * 3;
+
+  &__input {
+    height: $size;
+    flex-grow: 1;
+    border-radius: 0.3em;
+  }
+
+  &__submit-button {
+    $submitColor: lighten(green, 15%);
+    height: $size;
+    width: $size;
+    margin: 0em;
+    margin-left: 0.5em;
+    padding: 0.05em;
+    line-height: 1;
+    border: 0.15em solid $submitColor;
+    border-radius: 0.3em;
+    background-color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.05em;
+    color: darken($submitColor, 5%);
+  }
+}
+
+.sortable-list {
+  padding: $grid;
+  flex-grow: 1;
+
+  &__item {
+    padding: $grid * 2;
+    margin: 0 0 $grid 0;
+    border-radius: 0.5em;
+  }
+  &__item-text {
+    user-select: none;
+    flex-grow: 1;
+    word-break: break-all;
+  }
+
+  &__delete-button {
+    $deleteColor: red;
+    $size: 2em;
+    height: $size;
+    width: $size;
+    margin: 0em;
+    margin-left: $grid * 2;
+    padding: 0.1em;
+    line-height: 1;
+    border: 1px solid $deleteColor;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    color: darken($deleteColor, 15%);
+  }
+}

@@ -56,7 +56,7 @@ class Form extends React.Component {
           component="input"
           name={this.inputName}
           id={this.inputName}
-          placeholder=" Новая точка маршрута"
+          placeholder=" Введите новую точку маршрута"
           className="new-point-form__input"
           ref={input => {
             this.input = input;
