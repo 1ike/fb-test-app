@@ -13,14 +13,14 @@ const mapStateToProps = ({ center }) => ({ center });
 class Form extends React.Component {
   inputName = "inputPoint";
 
-  сreatePoint = value => {
+  createPoint = value => {
     const name = value[this.inputName];
     if (!name) {
       this.focusInput();
       return;
     }
 
-    this.props.сreatePoint({
+    this.props.createPoint({
       id: uid(),
       name,
       placemark: {
@@ -50,7 +50,7 @@ class Form extends React.Component {
       <form
         id="newPointForm"
         className="new-point-form"
-        onSubmit={this.props.handleSubmit(this.сreatePoint)}
+        onSubmit={this.props.handleSubmit(this.createPoint)}
       >
         <Field
           component="input"

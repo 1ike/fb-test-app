@@ -44,7 +44,7 @@ const initialStore = {
       name: "p2",
       placemark: {
         geometry: {
-          coordinates: [55.76, 37.67]
+          coordinates: [55.76, 37.7]
         },
         properties: {
           hintContent: "p2",

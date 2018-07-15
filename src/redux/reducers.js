@@ -6,11 +6,23 @@ import * as actions from "./actions";
 
 const points = handleActions(
   {
-    [actions.сreatePoint](state, { payload: point }) {
+    [actions.createPoint](state, { payload: point }) {
       return [...state, point];
     },
     [actions.deletePoint](state, { payload: id }) {
       return state.filter(point => point.id !== id);
+    },
+    [actions.shiftPoint](
+      state,
+      {
+        payload: { id, coordinates }
+      }
+    ) {
+      return state.map(point => {
+        if (point.id !== id) return point;
+        point.placemark.geometry.coordinates = coordinates;
+        return point;
+      });
     },
     [actions.reoderPoints](state, { payload: points }) {
       return points;
@@ -21,7 +33,7 @@ const points = handleActions(
 
 const center = handleActions(
   {
-    [actions.changeCenter](state, { payload }) {
+    [actions.shiftCenter](state, { payload }) {
       return payload;
     }
   },
