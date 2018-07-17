@@ -1,0 +1,363 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Redux store createPoint 1`] = `
+Object {
+  "center": Array [
+    55.76,
+    37.64,
+  ],
+  "form": Object {},
+  "points": Array [
+    Object {
+      "id": 0,
+      "name": "p0",
+      "placemark": Object {
+        "geometry": Object {
+          "coordinates": Array [
+            55.78,
+            37.63,
+          ],
+        },
+        "options": Object {
+          "draggable": true,
+          "preset": "islands#blueCircleDotIconWithCaption",
+        },
+        "properties": Object {
+          "balloonContent": "p0",
+          "hintContent": "p0",
+        },
+      },
+    },
+    Object {
+      "id": 1,
+      "name": "p1",
+      "placemark": Object {
+        "geometry": Object {
+          "coordinates": Array [
+            55.74,
+            37.62,
+          ],
+        },
+        "options": Object {
+          "draggable": true,
+          "preset": "islands#blueCircleDotIconWithCaption",
+        },
+        "properties": Object {
+          "balloonContent": "p1",
+          "hintContent": "p1",
+        },
+      },
+    },
+    Object {
+      "id": 2,
+      "name": "p2",
+      "placemark": Object {
+        "geometry": Object {
+          "coordinates": Array [
+            55.76,
+            37.7,
+          ],
+        },
+        "options": Object {
+          "draggable": true,
+          "preset": "islands#blueCircleDotIconWithCaption",
+        },
+        "properties": Object {
+          "balloonContent": "p2",
+          "hintContent": "p2",
+        },
+      },
+    },
+    Object {
+      "id": 5,
+      "name": "test point 1",
+      "placemark": Object {
+        "geometry": Object {
+          "coordinates": Array [
+            50,
+            70,
+          ],
+        },
+        "options": Object {
+          "draggable": true,
+          "preset": "islands#blueCircleDotIconWithCaption",
+        },
+        "properties": Object {
+          "balloonContent": "test point 1",
+          "hintContent": "test point 1",
+        },
+      },
+    },
+  ],
+}
+`;
+
+exports[`Redux store deletePoint 1`] = `
+Object {
+  "center": Array [
+    55.76,
+    37.64,
+  ],
+  "form": Object {},
+  "points": Array [
+    Object {
+      "id": 0,
+      "name": "p0",
+      "placemark": Object {
+        "geometry": Object {
+          "coordinates": Array [
+            55.78,
+            37.63,
+          ],
+        },
+        "options": Object {
+          "draggable": true,
+          "preset": "islands#blueCircleDotIconWithCaption",
+        },
+        "properties": Object {
+          "balloonContent": "p0",
+          "hintContent": "p0",
+        },
+      },
+    },
+    Object {
+      "id": 2,
+      "name": "p2",
+      "placemark": Object {
+        "geometry": Object {
+          "coordinates": Array [
+            55.76,
+            37.7,
+          ],
+        },
+        "options": Object {
+          "draggable": true,
+          "preset": "islands#blueCircleDotIconWithCaption",
+        },
+        "properties": Object {
+          "balloonContent": "p2",
+          "hintContent": "p2",
+        },
+      },
+    },
+  ],
+}
+`;
+
+exports[`Redux store reoderPoints 1`] = `
+Object {
+  "center": Array [
+    55.76,
+    37.64,
+  ],
+  "form": Object {},
+  "points": Object {
+    "points": Array [
+      Object {
+        "id": 1,
+        "name": "p1",
+        "placemark": Object {
+          "geometry": Object {
+            "coordinates": Array [
+              55.74,
+              37.62,
+            ],
+          },
+          "options": Object {
+            "draggable": true,
+            "preset": "islands#blueCircleDotIconWithCaption",
+          },
+          "properties": Object {
+            "balloonContent": "p1",
+            "hintContent": "p1",
+          },
+        },
+      },
+      Object {
+        "id": 0,
+        "name": "p0",
+        "placemark": Object {
+          "geometry": Object {
+            "coordinates": Array [
+              55.78,
+              37.63,
+            ],
+          },
+          "options": Object {
+            "draggable": true,
+            "preset": "islands#blueCircleDotIconWithCaption",
+          },
+          "properties": Object {
+            "balloonContent": "p0",
+            "hintContent": "p0",
+          },
+        },
+      },
+      Object {
+        "id": 2,
+        "name": "p2",
+        "placemark": Object {
+          "geometry": Object {
+            "coordinates": Array [
+              55.76,
+              37.7,
+            ],
+          },
+          "options": Object {
+            "draggable": true,
+            "preset": "islands#blueCircleDotIconWithCaption",
+          },
+          "properties": Object {
+            "balloonContent": "p2",
+            "hintContent": "p2",
+          },
+        },
+      },
+    ],
+  },
+}
+`;
+
+exports[`Redux store shiftCenter 1`] = `
+Object {
+  "center": Array [
+    50,
+    70,
+  ],
+  "form": Object {},
+  "points": Array [
+    Object {
+      "id": 0,
+      "name": "p0",
+      "placemark": Object {
+        "geometry": Object {
+          "coordinates": Array [
+            50,
+            70,
+          ],
+        },
+        "options": Object {
+          "draggable": true,
+          "preset": "islands#blueCircleDotIconWithCaption",
+        },
+        "properties": Object {
+          "balloonContent": "p0",
+          "hintContent": "p0",
+        },
+      },
+    },
+    Object {
+      "id": 1,
+      "name": "p1",
+      "placemark": Object {
+        "geometry": Object {
+          "coordinates": Array [
+            55.74,
+            37.62,
+          ],
+        },
+        "options": Object {
+          "draggable": true,
+          "preset": "islands#blueCircleDotIconWithCaption",
+        },
+        "properties": Object {
+          "balloonContent": "p1",
+          "hintContent": "p1",
+        },
+      },
+    },
+    Object {
+      "id": 2,
+      "name": "p2",
+      "placemark": Object {
+        "geometry": Object {
+          "coordinates": Array [
+            55.76,
+            37.7,
+          ],
+        },
+        "options": Object {
+          "draggable": true,
+          "preset": "islands#blueCircleDotIconWithCaption",
+        },
+        "properties": Object {
+          "balloonContent": "p2",
+          "hintContent": "p2",
+        },
+      },
+    },
+  ],
+}
+`;
+
+exports[`Redux store shiftPoint 1`] = `
+Object {
+  "center": Array [
+    55.76,
+    37.64,
+  ],
+  "form": Object {},
+  "points": Array [
+    Object {
+      "id": 0,
+      "name": "p0",
+      "placemark": Object {
+        "geometry": Object {
+          "coordinates": Array [
+            50,
+            70,
+          ],
+        },
+        "options": Object {
+          "draggable": true,
+          "preset": "islands#blueCircleDotIconWithCaption",
+        },
+        "properties": Object {
+          "balloonContent": "p0",
+          "hintContent": "p0",
+        },
+      },
+    },
+    Object {
+      "id": 1,
+      "name": "p1",
+      "placemark": Object {
+        "geometry": Object {
+          "coordinates": Array [
+            55.74,
+            37.62,
+          ],
+        },
+        "options": Object {
+          "draggable": true,
+          "preset": "islands#blueCircleDotIconWithCaption",
+        },
+        "properties": Object {
+          "balloonContent": "p1",
+          "hintContent": "p1",
+        },
+      },
+    },
+    Object {
+      "id": 2,
+      "name": "p2",
+      "placemark": Object {
+        "geometry": Object {
+          "coordinates": Array [
+            55.76,
+            37.7,
+          ],
+        },
+        "options": Object {
+          "draggable": true,
+          "preset": "islands#blueCircleDotIconWithCaption",
+        },
+        "properties": Object {
+          "balloonContent": "p2",
+          "hintContent": "p2",
+        },
+      },
+    },
+  ],
+}
+`;

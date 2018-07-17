@@ -1,18 +1,31 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { reduxForm } from "redux-form";
+
+import Enzyme, { mount } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+
+import { Form } from "../components/Points/Form";
 
 import initialStore from "../__fixtures__/initialStore";
-import ConnectedForm, { Form } from "../components/Points/Form";
+import { createStore } from "redux";
+import reducers from "../redux/reducers";
 
-console.log(Form);
-// class App extends React.Component {
-//   render() {
-//     return <span />;
-//   }
-// }
+Enzyme.configure({ adapter: new Adapter() });
 
-xit("renders without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<Form />, div);
-  ReactDOM.unmountComponentAtNode(div);
+const inputSelector = "input#inputPoint";
+
+const store = createStore(reducers, initialStore);
+const WrappedForm = reduxForm({ form: "createPoint" })(Form);
+
+it("Form snapshots", () => {
+  const wrapper = mount(
+    <Provider store={store}>
+      <WrappedForm />
+    </Provider>
+  );
+  wrapper
+    .find(inputSelector)
+    .simulate("change", { target: { value: "test point 1" } });
+  expect(wrapper.html()).toMatchSnapshot();
 });

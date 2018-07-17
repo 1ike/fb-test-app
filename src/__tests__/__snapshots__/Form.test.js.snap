@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form snapshots 1`] = `"<form id=\\"newPointForm\\" class=\\"new-point-form\\"><input name=\\"inputPoint\\" id=\\"inputPoint\\" placeholder=\\" Введите новую точку маршрута\\" class=\\"new-point-form__input\\" value=\\"test point 1\\"><button type=\\"submit\\" class=\\"new-point-form__submit-button\\" aria-label=\\"Добавить точку\\" title=\\"Добавить точку\\">+</button></form>"`;
