@@ -1,9 +1,9 @@
 import puppeteer from "puppeteer";
 
 const url = "http://localhost:3000/";
-const headless = false;
-const slowMo = headless ? 0 : 80;
-const timeout = headless ? 5000 : 10000;
+const headless = true;
+const slowMo = headless ? 0 : 100;
+const timeout = headless ? 7000 : 10000;
 
 let page;
 let browser;
@@ -15,7 +15,7 @@ const deleteBtnSelector = ".sortable-list__delete-button";
 // const width = 1920;
 // const height = 1080;
 
-describe("App browser testing", () => {
+describe("E2E browser testing", () => {
   beforeAll(async () => {
     browser = await puppeteer.launch({
       headless,
@@ -44,6 +44,7 @@ describe("App browser testing", () => {
     },
     timeout
   );
+
   it(
     "Delete point",
     async () => {
@@ -59,7 +60,33 @@ describe("App browser testing", () => {
       expect(points.length).toEqual(2);
       const secondElem = await page.$(`#${secondElemID}`);
       expect(secondElem).toBeFalsy();
-      await page.waitFor(3000);
+    },
+    timeout
+  );
+
+  it(
+    "Drag-n-Drop point",
+    async () => {
+      const movedElem = await page.$(pointSelector);
+      const movedElemID = await (await movedElem.getProperty("id")).jsonValue();
+
+      const box = await movedElem.boundingBox();
+
+      const mouse = page.mouse;
+      await mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+      await mouse.down();
+      await mouse.move(box.x + box.width / 2, box.y + box.height * 1.5, {
+        steps: 10
+      });
+      await mouse.up();
+      await page.waitFor(350);
+
+      const firstReoderedPoint = await page.$(pointSelector);
+      const firstReoderedPointID = await (await firstReoderedPoint.getProperty(
+        "id"
+      )).jsonValue();
+
+      expect(movedElemID).not.toEqual(firstReoderedPointID);
     },
     timeout
   );
