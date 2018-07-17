@@ -19,7 +19,8 @@ describe("E2E browser testing", () => {
   beforeAll(async () => {
     browser = await puppeteer.launch({
       headless,
-      slowMo
+      slowMo,
+      args: ["--no-sandbox"]
       // args: [`--window-size=${width},${height}`]
     });
     page = await browser.newPage();
