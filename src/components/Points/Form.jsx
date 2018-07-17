@@ -10,7 +10,7 @@ const uid = (() => {
 
 const mapStateToProps = ({ center }) => ({ center });
 
-class Form extends React.Component {
+export class Form extends React.Component {
   inputName = "inputPoint";
 
   createPoint = value => {

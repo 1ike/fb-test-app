@@ -46,7 +46,7 @@ const mapStateToProps = state => {
   return props;
 };
 
-class List extends React.Component {
+export class List extends React.Component {
   onDragEnd = () => result => {
     // dropped outside the list
     if (!result.destination) {

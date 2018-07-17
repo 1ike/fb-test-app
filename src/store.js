@@ -1,65 +1,11 @@
-import { createStore, applyMiddleware, compose } from "redux";
-import thunk from "redux-thunk";
+import { createStore, compose } from "redux";
 
 import reducers from "./redux/reducers";
+// import initialStore from "./__fixtures__/initialStore";
 
-const initialStore = {
-  points: [
-    {
-      id: 0,
-      name: "p0",
-      placemark: {
-        geometry: {
-          coordinates: [55.78, 37.63]
-        },
-        properties: {
-          hintContent: "p0",
-          balloonContent: "p0"
-        },
-        options: {
-          preset: "islands#blueCircleDotIconWithCaption",
-          draggable: true
-        }
-      }
-    },
-    {
-      id: 1,
-      name: "p1",
-      placemark: {
-        geometry: {
-          coordinates: [55.74, 37.62]
-        },
-        properties: {
-          hintContent: "p1",
-          balloonContent: "p1"
-        },
-        options: {
-          preset: "islands#blueCircleDotIconWithCaption",
-          draggable: true
-        }
-      }
-    },
-    {
-      id: 2,
-      name: "p2",
-      placemark: {
-        geometry: {
-          coordinates: [55.76, 37.7]
-        },
-        properties: {
-          hintContent: "p2",
-          balloonContent: "p2"
-        },
-        options: {
-          preset: "islands#blueCircleDotIconWithCaption",
-          draggable: true
-        }
-      }
-    }
-  ]
-};
+const initialStore = {};
 
-const middlewares = [applyMiddleware(thunk)];
+const middlewares = [];
 
 if (window.__REDUX_DEVTOOLS_EXTENSION__) {
   // eslint-disable-line

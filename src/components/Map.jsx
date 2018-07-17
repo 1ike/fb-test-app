@@ -9,7 +9,7 @@ const height = "100vh";
 
 const mapStateToProps = state => state;
 
-class MapBasics extends React.Component {
+export class MapBasics extends React.Component {
   shiftCenter = e => {
     const { newCenter } = e.originalEvent;
     const { center } = this.props;
