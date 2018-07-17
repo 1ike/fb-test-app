@@ -11,7 +11,8 @@ before_script:
   - ./cc-test-reporter before-build
 
 script:
-  - npm run start
+  - npm run build
+  - serve -s build -l 3000 &
   - npm test -- --coverage
 
 after_script:
