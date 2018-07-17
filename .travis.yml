@@ -10,9 +10,11 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 
-script:
   - npm run build
+  - npm i serve
   - serve -s build -l 3000 &
+
+script:
   - npm test -- --coverage
 
 after_script:
