@@ -28,7 +28,7 @@
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
-    "serve": "serve -l 80",
+    "serve": "serve -s build -l 80",
     "server": "npm-run-all build serve",
     "eject": "react-scripts eject"
   }
